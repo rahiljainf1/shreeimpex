@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .navbar {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .menu,
+    .submenu,
+    .sub-submenu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu>li {
+      display: inline-block;
+    }
+
+    .menu>li>a,
+    .submenu>li>a,
+    .sub-submenu>li>a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: red;
+    }
+
+    .menu>li:hover>a,
+    .submenu>li:hover>a,
+    .sub-submenu>li:hover>a {
+      background-color: #555;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .submenu>li {
+      display: block;
+      position: relative;
+    }
+
+    .submenu>li>a {
+      background-color: #555;
+    }
+
+    .submenu>li:hover>a {
+      background-color: #777;
+    }
+
+    .sub-submenu {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+    }
+
+    .submenu>li:hover .sub-submenu {
+      display: block;
+    }
+  </style>
+  
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="menu">
+      <li>
+        <a href="#">Home</a>
+      </li>
+
+      <li>
+        <a href="#">About</a>
+
+        <ul class="submenu">
+          <li><a href="#">Subcategory 1</a>
+          </li>
+
+          <li>
+            <a href="#">Subcategory 2</a>
+            <ul class="sub-submenu">
+              <li><a href="#">Child Item 1</a></li>
+              <li><a href="#">Child Item 2</a></li>
+              <li><a href="#">Child Item 3</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#">Subcategory 3</a>
+            <ul class="sub-submenu">
+              <li><a href="#">Child Item 1</a></li>
+              <li><a href="#">Child Item 2</a></li>
+              <li><a href="#">Child Item 3</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </li>
+
+      <li><a href="#">Sun</a>
+      </li>
+    </ul>
+  </nav>
+
+
+
+  <script>
+    // Show/hide submenu on hover
+    const submenuItems = document.querySelectorAll('.menu > li');
+    submenuItems.forEach(function (item) {
+      item.addEventListener('mouseenter', function () {
+        const submenu = this.querySelector('.submenu');
+        if (submenu) {
+          submenu.style.display = 'block';
+        }
+      });
+
+      item.addEventListener('mouseleave', function () {
+        const submenu = this.querySelector('.submenu');
+        if (submenu) {
+          submenu.style.display = 'none';
+        }
+      });
+    });
+
+  </script>
+
+
+</body>
+
+</html>
+
+<!---            html                           -->
+
+
+<!---css-->
+
+
+
+<!---js-->

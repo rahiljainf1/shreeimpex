@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Navigation Bar */
+    /* Some basic styling for the navbar */
+    .about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image-div img {
+  width: 200px; /* Adjust the size as needed */
+  height: auto;
+}
+
+.content-div {
+  flex-grow: 1;
+  margin-left: 20px; /* Adjust the spacing as needed */
+}
+
+.content-div h2 {
+  font-size: 24px; /* Adjust the font size as needed */
+  margin-bottom: 10px; /* Adjust the spacing as needed */
+}
+
+.content-div p {
+  font-size: 16px; /* Adjust the font size as needed */
+  line-height: 1.5;
+  margin-bottom: 20px; /* Adjust the spacing as needed */
+}
+
+.content-div a {
+  display: inline-block;
+  font-size: 16px; /* Adjust the font size as needed */
+  color: blue; /* Adjust the link color as needed */
+}
+
+</style>
+</head>
+<body>
+  <div class="about-section">
+    <div class="image-div">
+      <img src="path/to/your/image.jpg" alt="About Us Image">
+    </div>
+    <div class="content-div">
+      <h2>About Us</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec convallis sapien. Nunc hendrerit ligula vel tincidunt ultrices.</p>
+      <a href="#">Learn More</a>
+    </div>
+  </div>
+  
+  <script>
+    // JavaScript to handle dropdown behavior
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const dropdownItems = document.querySelectorAll('.navbar li');
+      
+      dropdownItems.forEach((item) => {
+        item.addEventListener('click', () => {
+          item.querySelector('.dropdown-content').classList.toggle('show');
+        });
+      });
+      
+      // Close the dropdown when clicking outside of it
+      window.addEventListener('click', (event) => {
+        if (!event.target.closest('.navbar li')) {
+          dropdownItems.forEach((item) => {
+            item.querySelector('.dropdown-content').classList.remove('show');
+          });
+        }
+      });
+    });
+  </script>
+
+</html>
+
